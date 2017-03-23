@@ -1,0 +1,165 @@
+ </ul><!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kim's Party List to do Items :-)</title>
+ <link href="css/material.min.css" media="all" rel="stylesheet" type="text/css" /> 
+  <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" /> 
+ <link href="css/styles.css" media="all" rel="stylesheet" type="text/css"/>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+<!-- Simple header with scrollable tabs. --><!-- List with avatar and controls -->
+<!-- Wide card with share menu button -->
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"><i class="material-icons white600">face</i> Kim's Party Items to do list</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Kimberly Party Items</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+<div id="myDIV" class="header">
+   <!-- <input type="text" id="myInput" placeholder="Add a party item..." maxlength="30">
+  <!-- Simple Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="myInput">
+    <label class="mdl-textfield__label" for="sample1">Add items...</label>
+  </div>
+</form>
+
+  <!-- Simple Textfield -->
+
+  <!-- Textfield with Floating Label -->
+
+
+
+
+
+  <span onclick="newElement()" button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>
+</div>
+
+<ul id="myUL" class="todolist">
+  <li class="todoitem">Soda</li>
+ <!-- <li class="checked todoitem">Pay bills</li>-->
+ <li class="todoitem">Beer</li>
+ <li class="todoitem">Wine</li>
+ <li class="todoitem">Salad</li>
+ <li class="todoitem">Pizza</li>
+ <li class="todoitem">Juice</li>
+   <li class="checked todoitem">Balloons</li>
+   <li class="checked todoitem">Chips</li>
+</ul>
+ </main>
+ <footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Kim's Party Items!</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Privacy & Terms</a></li>
+      <!-- Contact Chip -->
+<span class="mdl-chip mdl-chip--contact">
+    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">K</span>
+    <span class="mdl-chip__text"><a href="mailto:kimfreesland@yahoo.com">contact me</a></span>
+</span>
+    </ul>
+  </div>
+</footer>
+</div>
+
+
+<script src="js/material.min.js"></script>
+<script src="js/bower.js"></script>
+ <script>
+ 
+  // Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByClassName("todoitem");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul.todolist');
+list.addEventListener('click', function(ev) {
+if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.className="todoitem";
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+  </script>
+</body>
+
+
+</html>
